@@ -12,7 +12,7 @@
 -- Nation IDs: 166
 -- Spell IDs: N/A
 -- Magic Site IDs: 1450 - 1499
--- Unit IDs: N/A
+-- Unit IDs: Determined by the game
 -- Item IDs: N/A
 -- Weapon IDs: N/A
 -- Armor IDs: N/A
@@ -29,6 +29,7 @@
 #selectnation 166
 #clear
 #name "Hyperborea"
+
 #epithet "The Polar Ascendants"
 #era 1
 #brief "The last bastion of humanity's divine origin in the Far North, fighting against mankind's devolution into beasts"
@@ -62,6 +63,9 @@ Priests: Moderate"
 -- home Ice Fort, rest are era Fortresses
 #homefort 21
 
+-- Add recruitment for Atavi Slaves
+#addrecunit "Atavi Slave"
+
 -- Add starting site
 #startsite "Temple of the Midnight Sun"
 #startsite "Hall of the Boreadae Kings"
@@ -69,6 +73,47 @@ Priests: Moderate"
 -- All north gods
 #homerealm 1
 
+#end
+
+
+		------------------------------------
+		----------                ----------
+		--------->      UNITS     <---------
+		----------                ----------
+		------------------------------------
+
+-- Slave Infantry
+#newmonster
+#name "Atavi Slave"
+#spr1 "./hyperborea/atavi_slave_1.tga"
+#spr2 "./hyperborea/atavi_slave_2.tga"
+#clearspec
+#clearweapons
+#cleararmor
+#descr "The Atavi are degenerated southerners, their bloodline having fallen far from the divine perfection of the Boreadae. These beast-men are kept as slaves and used as expendable troops in the Hyperborean armies. Though physically strong due to their bestial nature, they are considered little more than animals by their Boreadae masters. The Atavi are driven into battle by cruel taskmasters, their primitive fury made useful through strict discipline and the threat of punishment."
+#coldres 5
+#icenatprot 1
+#hp 9
+#size 3
+#prot 2
+#mor 7
+#mr 8
+#enc 3
+#str 10
+#att 10
+#def 12
+#prec 10
+#ap 10
+#mapmove 14
+#maxage 50
+#nametype 115
+#gcost 5
+#rcost 3
+#rpcost 9
+#weapon 12 -- Mace
+#weapon 360 -- Sticks and Stones
+#armor 1 -- Buckler
+#slave
 #end
 
 
