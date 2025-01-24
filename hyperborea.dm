@@ -90,9 +90,6 @@ Priests: Moderate"
 #name "Snow-Ape Slave"
 #spr1 "./hyperborea/snow_ape_idle.png"
 #spr2 "./hyperborea/snow_ape_attack.png"
-#clearspec
-#clearweapons
-#cleararmor
 #descr "Snow-Apes are primitive beasts native to the frozen wastes of Elysium, captured and enslaved by the Boreadae to serve as expendable troops. Though physically strong and naturally adapted to the cold, they are considered little more than useful animals by their Boreadae masters. The Snow-Apes are driven into battle by cruel taskmasters, their primitive fury made useful through strict discipline and the threat of punishment. Their thick fur and natural resistance to cold makes them well-suited for warfare in the eternal winter of Hyperborea."
 #coldres 5
 #icenatprot 1
@@ -110,9 +107,6 @@ Priests: Moderate"
 #mapmove 14
 #maxage 50
 #nametype 115
-#gcost 5
-#rcost 3
-#rpcost 9
 #weapon 12 -- Mace
 #weapon 360 -- Sticks and Stones
 #armor 1 -- Buckler
@@ -126,9 +120,6 @@ Priests: Moderate"
 #name "Snow-Ape Archer"
 #spr1 "./hyperborea/snow_ape_archer_idle.png"
 #spr2 "./hyperborea/snow_ape_archer_attack.png"
-#clearspec
-#clearweapons
-#cleararmor
 #descr "Snow-Apes are primitive beasts native to the frozen wastes of Elysium, captured and enslaved by the Boreadae. While most serve as expendable melee troops, some show an aptitude for ranged combat and are trained with simple bows. Though their accuracy is poor compared to trained archers, their strength allows them to draw heavier bows than most humans. Like all Snow-Apes, they are naturally adapted to the cold and are driven into battle by cruel taskmasters."
 #hp 10
 #size 3
@@ -143,9 +134,6 @@ Priests: Moderate"
 #ap 10
 #mapmove 14
 #maxage 50
-#gcost 7
-#rpcost 9000
-#rcost 3
 #weapon 9 -- Dagger
 #weapon 23 -- Short Bow
 #slave
@@ -183,9 +171,6 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #poorleader
 #needlab
 #commslaves
-#gcost 125
-#rcost 1
-#rpcost 2
 #weapon 7 -- Quarter Staff
 #coldres 5
 #snow
@@ -215,9 +200,6 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #taskmaster 3
 #makemonsters1 "Snow-Ape Slave" | 6
 #makemonsters2 "Snow-Ape Archer" | 3
-#gcost 170
-#rcost 39
-#rpcost 2
 #weapon 1 -- Spear
 #armor 13 -- Chain Mail
 #armor 118 -- Half Helmet
@@ -250,4 +232,38 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #rarity 5
 #gems 4 1 -- 1 Astral gem
 -- #homemon 7889 -- Will need to define this unit later
+#end
+
+		------------------------------------
+		----------                ----------
+		--------->   COST BALANCE <---------
+		----------                ----------
+		------------------------------------
+
+-- Snow-Ape Infantry
+#selectmonster "Snow-Ape Slave"
+#gcost 5
+#rcost 3
+#rpcost 9
+#end
+
+-- Snow-Ape Archer
+#selectmonster "Snow-Ape Archer"
+#gcost 7
+#rcost 3
+#rpcost 9000
+#end
+
+-- Viras Communicant
+#selectmonster "Viras Communicant"
+#gcost 125
+#rcost 1
+#rpcost 2
+#end
+
+-- Boreadae Taskmaster
+#selectmonster "Boreadae Taskmaster"
+#gcost 200
+#rcost 39
+#rpcost 2
 #end
