@@ -35,6 +35,7 @@
 #addreccom "Boreadae Taskmaster"
 #addrecunit "Snow-Ape Slave"
 #addrecunit "Snow-Ape Archer"
+#addrecunit "Child of the Midnight Sun"
 
 #epithet "The Polar Ascendants"
 #era 1
@@ -85,6 +86,37 @@ Priests: Moderate"
 		----------                ----------
 		------------------------------------
 
+
+-- Sacreds
+#newmonster
+#name "Child of the Midnight Sun"
+#spr1 "./hyperborea/midnight_sun_child_idle.png"
+#spr2 "./hyperborea/midnight_sun_child_attack.png"
+#descr "The Children of the Midnight Sun are sacred warriors of pure Boreadae blood who have achieved perfect harmony with their divine nature. Like the eternal sun that never sets in their homeland, they possess supernatural endurance that allows them to fight tirelessly. These warriors represent the closest connection to the Boreadae's extraplanar origins, their bodies radiating a subtle glow that marks their divine heritage. Though fewer in number with each passing generation, they remain the most feared of Hyperborea's warriors, combining the natural might of the Boreadae with perfect martial discipline."
+#hp 25
+#size 5
+#prot 10
+#mor 14
+#mr 15
+#str 18
+#att 12
+#def 12
+#prec 11
+#ap 14
+#mapmove 16
+#maxage 200
+#holy
+#darkvision
+#snow
+#coldres 10
+#weapon 17 -- Axe
+#armor 14 -- Plate Hauberk
+#armor 118 -- Half Helmet
+#armor 2 -- Shield
+#recruitedby 1451
+#reinvigoration 2
+#end
+
 -- Snow-Ape Infantry
 #newmonster
 #name "Snow-Ape Slave"
@@ -113,6 +145,7 @@ Priests: Moderate"
 #slave
 #animal
 #snow
+#undisciplined
 #end
 
 -- Snow-Ape Archer
@@ -139,6 +172,7 @@ Priests: Moderate"
 #slave
 #animal
 #snow
+#undisciplined
 #end
 
 		------------------------------------
@@ -184,7 +218,7 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #descr "The Boreadae Taskmasters are imposing half-giants who maintain iron discipline over the Snow-Ape slaves. Through generations of experience breaking and training these beasts, they have developed effective methods of controlling large groups of the creatures. Their mere presence is enough to keep the Snow-Apes in line, and they can quickly gather more of these beasts from the frozen wastes when needed. Though they possess none of the mystical powers of their more scholarly kin, they are nonetheless respected for their crucial role in maintaining Hyperborea's slave armies."
 
 #hp 33
-#size 6
+#size 5
 #prot 18
 #mor 12
 #mr 12
@@ -197,7 +231,9 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #mapmove 12
 #maxage 200
 #goodleader
-#taskmaster 3
+#undisleader 1
+#taskmaster 2
+#beastmaster 1
 #makemonsters1 "Snow-Ape Slave" | 6
 #makemonsters2 "Snow-Ape Archer" | 3
 #weapon 1 -- Spear
@@ -205,7 +241,7 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #armor 118 -- Half Helmet
 #armor 2 -- Shield
 #snow
-#coldres 15
+#coldres 10
 #ressize 2
 #end
 
@@ -231,7 +267,7 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #level 0
 #rarity 5
 #gems 4 1 -- 1 Astral gem
--- #homemon 7889 -- Will need to define this unit later
+#homemon "Child of the Midnight Sun"
 #end
 
 		------------------------------------
@@ -266,4 +302,11 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #gcost 200
 #rcost 39
 #rpcost 2
+#end
+
+-- Children of the Midnight Sun
+#selectmonster "Child of the Midnight Sun"
+#gcost 50
+#rcost 25
+#rpcost 25
 #end
