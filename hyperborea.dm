@@ -30,20 +30,26 @@
 #clear
 #name "Hyperborea"
 
+-- Add recruitment for commanders and units
+#addreccom "Viras Communicant"
+#addreccom "Boreadae Taskmaster"
+#addrecunit "Snow-Ape Slave"
+#addrecunit "Snow-Ape Archer"
+
 #epithet "The Polar Ascendants"
 #era 1
-#brief "The last bastion of humanity's divine origin in the Far North, fighting against mankind's devolution into beasts"
-#descr "In the eternal ice of the world's crown lies Hyperborea, cradle of true humanity and last refuge of the Golden Age. The Boreadae are no mere nation, but the remaining pure bloodline of mankind's original, perfect form. Their ancestors were divine beings who ruled from the mystical center of the world, when all of humanity dwelled in enlightened splendor beneath the cosmic pole.
+#brief "An extraplanar race of divine beings manifesting in Elysium, slowly succumbing to material corruption"
+#descr "In the eternal ice of Elysium's crown stands Hyperborea, where the Boreadae have chosen to manifest their divine forms in pursuit of the Pantokrator's throne. These extraplanar beings of pure celestial essence chose the furthest north as their foothold, believing the purifying cold would help preserve their divine nature against the corrupting influence of the material realm.
 
-As lesser peoples strayed south from this sacred homeland, they fell under the corrupting influence of the South Pole's demonic energies. Generation by generation, these wanderers devolved both spiritually and physically, their divine nature deteriorating until they became little more than clever apes. The Boreadae view these degraded southerners with a mixture of disgust and pity, enslaving them both as a mercy and as a reminder of humanity's fall. Their slave troops of beast-men serve as expendable soldiers, driven into battle by stern taskmasters who maintain their authority through cruel discipline and ancestral sorcery.
+The Boreadae quickly established dominion over the native Snow-Apes, seeing the bestial creatures as useful tools in their quest for power. However, as generations passed, those Boreadae who remained longest in physical form began to show signs of degeneration. The corrupting energies emanating from the South Pole gradually eroded their divine essence, and some foolishly diluted their celestial blood through union with material beings. These degraded Boreadae became the Viras, beings little better than humans, though they retain enough of their ancestral nature to serve as useful vessels in magical rituals.
 
-Now the pure blood of the Boreadae themselves begins to thin, and signs of degeneration appear even in their isolated realm. Their prophets speak of a final ascension that will restore their celestial nature, yet many fear they too will succumb to the cosmic tide of devolution. In their desperation to preserve their divine essence, the Boreadae elders have grown fanatical in their pursuit of blood purity and ancient rites of power, knowing they are mankind's last hope of reclaiming its birthright of perfection."
-#summary "Race: Last half-giant Boreadae of the Golden Age, and degenerated Ape-men Southerners
+Now the pure-blooded Boreadae grow ever fewer, as more of their kind succumb to the material realm's corrupting influence. Their prophets speak of achieving the Pantokrator's throne before their divine essence is fully lost, yet many fear they have already strayed too far from their celestial origin. In their desperation to preserve what remains of their otherworldly nature, the Boreadae elders have grown fanatical in their pursuit of blood purity and ancient rites of power."
+#summary "Race: Extraplanar Boreadae manifested as half-giants, degenerated Viras, and enslaved Snow-Apes
 Preferences: Cold scale +3
 Military: Divine warriors, frost priests, and enslaved beast-men troop
-Magic: Strong Water, Glamour. Some Astral, Blood, and Fire
+Magic: Strong Water, Glamour. Some Astral, Blood, and Fire.
 Scales & Blesses: Cold limit +1
-Buildings: Start with an ice fort, rest are regular
+Buildings: Start with an ice castle, rest are regular
 Priests: Moderate"
 
 #flag "./hyperborea_flag.tga"
@@ -60,11 +66,8 @@ Priests: Moderate"
 #idealcold 2
 #moreheat -1
 
--- home Ice Fort, rest are era Fortresses
-#homefort 21
-
--- Add recruitment for Atavi Slaves
-#addrecunit "Atavi Slave"
+-- home Ice Castle, rest are era appropriate
+#homefort 22
 
 -- Add starting site
 #startsite "Temple of the Midnight Sun"
@@ -82,15 +85,15 @@ Priests: Moderate"
 		----------                ----------
 		------------------------------------
 
--- Slave Infantry
+-- Snow-Ape Infantry
 #newmonster
-#name "Atavi Slave"
-#spr1 "./hyperborea/atavi_slave_1.tga"
-#spr2 "./hyperborea/atavi_slave_2.tga"
+#name "Snow-Ape Slave"
+#spr1 "./hyperborea/snow_ape_idle.png"
+#spr2 "./hyperborea/snow_ape_attack.png"
 #clearspec
 #clearweapons
 #cleararmor
-#descr "The Atavi are degenerated southerners, their bloodline having fallen far from the divine perfection of the Boreadae. These beast-men are kept as slaves and used as expendable troops in the Hyperborean armies. Though physically strong due to their bestial nature, they are considered little more than animals by their Boreadae masters. The Atavi are driven into battle by cruel taskmasters, their primitive fury made useful through strict discipline and the threat of punishment."
+#descr "Snow-Apes are primitive beasts native to the frozen wastes of Elysium, captured and enslaved by the Boreadae to serve as expendable troops. Though physically strong and naturally adapted to the cold, they are considered little more than useful animals by their Boreadae masters. The Snow-Apes are driven into battle by cruel taskmasters, their primitive fury made useful through strict discipline and the threat of punishment. Their thick fur and natural resistance to cold makes them well-suited for warfare in the eternal winter of Hyperborea."
 #coldres 5
 #icenatprot 1
 #hp 9
@@ -101,7 +104,7 @@ Priests: Moderate"
 #enc 3
 #str 10
 #att 10
-#def 12
+#def 10
 #prec 10
 #ap 10
 #mapmove 14
@@ -114,8 +117,115 @@ Priests: Moderate"
 #weapon 360 -- Sticks and Stones
 #armor 1 -- Buckler
 #slave
+#animal
+#snow
 #end
 
+-- Snow-Ape Archer
+#newmonster
+#name "Snow-Ape Archer"
+#spr1 "./hyperborea/snow_ape_archer_idle.png"
+#spr2 "./hyperborea/snow_ape_archer_attack.png"
+#clearspec
+#clearweapons
+#cleararmor
+#descr "Snow-Apes are primitive beasts native to the frozen wastes of Elysium, captured and enslaved by the Boreadae. While most serve as expendable melee troops, some show an aptitude for ranged combat and are trained with simple bows. Though their accuracy is poor compared to trained archers, their strength allows them to draw heavier bows than most humans. Like all Snow-Apes, they are naturally adapted to the cold and are driven into battle by cruel taskmasters."
+#hp 10
+#size 3
+#prot 1
+#mor 7
+#mr 8
+#enc 3
+#str 10
+#att 10
+#def 10
+#prec 10
+#ap 10
+#mapmove 14
+#maxage 50
+#gcost 7
+#rpcost 9000
+#rcost 3
+#weapon 9 -- Dagger
+#weapon 23 -- Short Bow
+#slave
+#animal
+#snow
+#end
+
+		------------------------------------
+		----------                ----------
+		--------->   COMMANDERS   <---------
+		----------                ----------
+		------------------------------------
+-- Communion slave
+#newmonster
+#name "Viras Communicant"
+#spr1 "./hyperborea/viras_communicant_idle.png"
+#spr2 "./hyperborea/viras_communicant_attack.png"
+#descr "The Viras are the descendants of ancient Boreadae who mingled their divine blood with the creatures of Elysium in ages past. Though diminished from their ancestors' glory, they retain a trace of celestial heritage that manifests as magical talent. The Communicants are those Viras trained to serve their purer-blooded Boreadae masters in magical research and ritual. Their greatest value lies in their ability to form communion slaves, channeling their energy to support more powerful mages. Some say this willingness to serve as vessels stems from an ancestral memory of divine communion with their Progenitor forebears.
+
+Those Communicants who prove especially devoted may undergo sacred rituals that awaken their dormant memories of divine origin, bringing them closer to their ancestral nature - though they remain far from the purity of true Boreadae. These awakened Communicants often experience visions of the Progenitors and long desperately to commune with these ancient beings."
+#hp 10
+#size 3
+#prot 0
+#mor 10
+#mr 14
+#enc 3
+#str 10
+#att 8
+#def 8
+#prec 10
+#ap 16
+#mapmove 16
+#maxage 50
+#magicskill 4 1 -- Astral 1
+#poorleader
+#needlab
+#commslaves
+#gcost 125
+#rcost 1
+#rpcost 2
+#weapon 7 -- Quarter Staff
+#coldres 5
+#snow
+#end 
+
+-- Basic slave taskmaster
+#newmonster
+#name "Boreadae Taskmaster"
+#spr1 "./hyperborea/boreadae_taskmaster_idle.png"
+#spr2 "./hyperborea/boreadae_taskmaster_attack.png"
+#descr "The Boreadae Taskmasters are imposing half-giants who maintain iron discipline over the Snow-Ape slaves. Through generations of experience breaking and training these beasts, they have developed effective methods of controlling large groups of the creatures. Their mere presence is enough to keep the Snow-Apes in line, and they can quickly gather more of these beasts from the frozen wastes when needed. Though they possess none of the mystical powers of their more scholarly kin, they are nonetheless respected for their crucial role in maintaining Hyperborea's slave armies."
+
+#hp 33
+#size 6
+#prot 18
+#mor 12
+#mr 12
+#enc 3
+#str 21
+#att 11
+#def 11
+#prec 10
+#ap 12
+#mapmove 12
+#maxage 200
+#goodleader
+#taskmaster 3
+#makemonsters1 "Snow-Ape Slave" | 6
+#makemonsters2 "Snow-Ape Archer" | 3
+#gcost 170
+#rcost 39
+#rpcost 2
+#weapon 1 -- Spear
+#armor 13 -- Chain Mail
+#armor 118 -- Half Helmet
+#armor 2 -- Shield
+#snow
+#coldres 15
+#ressize 2
+#end
 
 		------------------------------------
 		----------                ----------
@@ -140,4 +250,4 @@ Priests: Moderate"
 #rarity 5
 #gems 4 1 -- 1 Astral gem
 -- #homemon 7889 -- Will need to define this unit later
-#end 
+#end
