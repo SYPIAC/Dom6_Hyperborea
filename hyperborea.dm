@@ -50,8 +50,8 @@
 
 The Boreadae quickly established dominion over the native Snow-Apes, seeing the bestial creatures as useful tools in their quest for power. However, as generations passed, those Boreadae who remained longest in physical form began to show signs of degeneration. The corrupting energies emanating from the South Pole gradually eroded their divine essence, and some foolishly diluted their celestial blood through union with material beings. These degraded Boreadae became the Viras, beings little better than humans, though they retain enough of their ancestral nature to serve as useful vessels in magical rituals.
 
-Now the pure-blooded Boreadae grow ever fewer, as more of their kind succumb to the material realm's corrupting influence. Their prophets speak of achieving the Pantokrator's throne before their divine essence is fully lost, yet many fear they have already strayed too far from their celestial origin. In their desperation to preserve what remains of their otherworldly nature, the Boreadae elders have grown fanatical in their pursuit of blood purity and ancient rites of power."
-#summary "Race: Extraplanar Boreadae manifested as half-giants, degenerated Viras, and enslaved Snow-Apes
+Hyperborea's strict hierarchy is ruled by ever diminishing numbers of half-giants, supported by humanlike Viras, and enforced by bestial Snow-Apes. They desperately seek the Pantokrator's throne before their divine essence is fully lost."
+#summary "A strict hierarchy, with Boreadae half-giants at the top, degenerated Viras in the middle, and enslaved Snow-Apes at the bottom.
 Preferences: Cold scale +3
 Military: Divine warriors, humanlike Viras, and cheap enslaved beast-men
 Magic: Strong Water, Glamour. Some Astral, Blood, and Fire.
@@ -66,12 +66,12 @@ Priests: Moderate"
 #secondarycolor 0.2 0.3 0.4
 
 -- Nation specific preferences
-#coldpower 2
+#idealcold 2
+#moreheat -1
+#moremagic 1
 #forestsurvival
 #mountainsurvival
 
-#idealcold 2
-#moreheat -1
 
 -- home Ice Castle, rest are era appropriate
 #homefort 22
@@ -123,6 +123,11 @@ Priests: Moderate"
 #copyweapon 643 -- Bronze Spear
 #name "Crystalline Spear"
 #iceweapon
+#end
+
+#newweapon 1451 -- Crystalline Staff
+#copyweapon 7 -- Quarter Staff
+#name "Crystalline Staff"
 #end
 
 		------------------------------------
@@ -283,6 +288,21 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #snow
 #end 
 
+-- Awakened Communicant
+#newmonster
+#name "Awakened Viras Communicant"
+#spr1 "./hyperborea/awakened_viras_communicant_idle.png"
+#spr2 "./hyperborea/awakened_viras_communicant_attack.png"
+#copystats "Viras Communicant"
+#descr "The Viras are the descendants of ancient Boreadae who mingled their divine blood with the creatures of Elysium in ages past. The Communicants are those Viras trained to serve their purer-blooded Boreadae masters in magical research and ritual. Their greatest value lies in their ability to form communion slaves, channeling their energy to support more powerful mages. Some say this willingness to serve as vessels stems from an ancestral memory of divine communion with their Progenitor forebears. 
+
+Those who have undergone a sacred ritual that awakened their blood memory of their origins, are called Awakened. They make suitable vessels for the progenitors."
+#sacred
+#mindvessel 1
+#armor 230 -- Magic Robes
+#weapon 1451 -- Crystalline Staff
+#end
+
 
 -- Slave/animal leader
 #newmonster
@@ -290,7 +310,9 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #spr1 "./hyperborea/boreadae_taskmaster_idle.png"
 #spr2 "./hyperborea/boreadae_taskmaster_attack.png"
 #descr "Some Boreadae are gifted with deep blue eyes, much like the void their forebears came from. They exude an aura of peace that inspires even beasts to take their natural place in the Hyperborean battle lines.
+
 Usually, they are employed to ensure the Snow-Apes remain obedient, or inspire and lead other undisciplined subjects. Others scour the frozen wastes for Snow-Apes to recruit, and can train up to 10 per month.
+
 In combat, their gaze is turned to a weapon, stunning whoever they lock eyes with."
 #hp 33
 #size 5
@@ -329,7 +351,9 @@ In combat, their gaze is turned to a weapon, stunning whoever they lock eyes wit
 #fixedname "Abaris the Healer"
 #spr1 "./hyperborea/abaris_idle.png"
 #spr2 "./hyperborea/abaris_attack.png"
-#descr "Abaris the Healer is a legendary figure who fled his homeland during a time of plague to master the healing arts. Now returned, he uses his knowledge to aid his people. Abaris is a powerful mage, healer, and diviner, known for his ability to prevent misfortune and consume no food."
+#descr "Abaris the Healer is a legendary figure who fled his homeland during a time of plague to master the healing arts. Now returned, he uses his knowledge to aid his people.
+
+Abaris is a powerful mage, healer, and diviner, known for his ability to prevent misfortune and to travel long distances without food."
 #hp 15
 #size 3
 #prot 0
@@ -401,3 +425,25 @@ In combat, their gaze is turned to a weapon, stunning whoever they lock eyes wit
 #rcost 3
 #rpcost 10000
 #end
+
+		------------------------------------
+		----------                ----------
+		--------->      SPELLS    <---------
+		----------                ----------
+		------------------------------------
+
+-- TODO: Figure out the spec, how do I make this turn the communicant into an awakened form?
+--#newspell
+--#name "Ritual of Ancestral Awakening"
+--#descr "Through deep meditation and mystical rites, a Viras Communicant can awaken the dormant memories of their divine heritage. This sacred transformation brings them closer to their ancestral nature, though they remain far from the purity of true Boreadae. The ritual permanently transforms a Viras Communicant into an Awakened Viras Communicant, granting them sacred status and the ability to serve as vessels for divine power."
+--#school 4 -- Alteration 3
+--#researchlevel 3
+--#path 4 -1 -- Astral 1 to cast
+--#pathlevel 1 0
+--#fatiguecost 300 -- 3 gems
+--#effect 10045 -- Transformation
+--#spec 545783812 -- I don't know what this means
+--#onlyatsite 1451 -- Can only be cast at the Hall of the Boreadae Kings
+--#restricted 166 -- National
+--#onlymnr "Viras Communicant"
+--#end
