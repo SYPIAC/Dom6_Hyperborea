@@ -279,17 +279,21 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #ap 16
 #mapmove 16
 #maxage 50
-#magicskill 4 1 -- Astral 1
+#magicskill 4 2 -- Astral 2 after transformation, but made 1 through negative boost
+#magicskill 9 1 -- Holy 1 after transformation
+#magicboost 4 -1 -- This unit is actually astral 1
+#magicboost 9 -1 -- This unit is actually holy 0
 #poorleader
 #needlab
-#commslaves
+#mindvessel 0
+#comslave
 #weapon 7 -- Quarter Staff
 #coldres 5
 #snow
 #end 
 
 -- Awakened Communicant
-#newmonster
+#newmonster 5501
 #name "Awakened Viras Communicant"
 #spr1 "./hyperborea/awakened_viras_communicant_idle.png"
 #spr2 "./hyperborea/awakened_viras_communicant_attack.png"
@@ -297,7 +301,11 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #descr "The Viras are the descendants of ancient Boreadae who mingled their divine blood with the creatures of Elysium in ages past. The Communicants are those Viras trained to serve their purer-blooded Boreadae masters in magical research and ritual. Their greatest value lies in their ability to form communion slaves, channeling their energy to support more powerful mages. Some say this willingness to serve as vessels stems from an ancestral memory of divine communion with their Progenitor forebears. 
 
 Those who have undergone a sacred ritual that awakened their blood memory of their origins, are called Awakened. They make suitable vessels for the progenitors."
-#sacred
+#snow
+#holy
+#poorleader
+#coldres 10
+#magicskill 4 1 -- Astral 2
 #mindvessel 1
 #armor 230 -- Magic Robes
 #weapon 1451 -- Crystalline Staff
@@ -311,7 +319,7 @@ Those who have undergone a sacred ritual that awakened their blood memory of the
 #spr2 "./hyperborea/boreadae_taskmaster_attack.png"
 #descr "Some Boreadae are gifted with deep blue eyes, much like the void their forebears came from. They exude an aura of peace that inspires even beasts to take their natural place in the Hyperborean battle lines.
 
-Usually, they are employed to ensure the Snow-Apes remain obedient, or inspire and lead other undisciplined subjects. Others scour the frozen wastes for Snow-Apes to recruit, and can train up to 10 per month.
+Usually, they are employed to ensure the Snow-Apes remain obedient, or inspire and lead other undisciplined subjects. Others scour the frozen wastes for Snow-Apes to recruit, and can capture up to 10 per month, at the expense of some unrest.
 
 In combat, their gaze is turned to a weapon, stunning whoever they lock eyes with."
 #hp 33
@@ -332,8 +340,8 @@ In combat, their gaze is turned to a weapon, stunning whoever they lock eyes wit
 #taskmaster 2
 #beastmaster 1
 #inspirational 1
-#makemonsters1 "Snow-Ape Slave" | 6
-#makemonsters2 "Snow-Ape Archer" | 4
+#slaver "Snow-Ape Slave"
+#patrolbonus 10
 #weapon 40 -- Whip
 #weapon 595 -- Hypnotic Gaze
 #armor 13 -- Chain Mail
@@ -391,6 +399,13 @@ Abaris is a powerful mage, healer, and diviner, known for his ability to prevent
 #rpcost 10002
 #end
 
+-- Awakened Communicant
+#selectmonster "Awakened Viras Communicant"
+#gcost 10000
+#rcost 1
+#rpcost 10000
+#end
+
 -- Boreadae Taskmaster
 #selectmonster "Boreadae Taskmaster"
 #gcost 10100
@@ -431,19 +446,20 @@ Abaris is a powerful mage, healer, and diviner, known for his ability to prevent
 		--------->      SPELLS    <---------
 		----------                ----------
 		------------------------------------
-
--- TODO: Figure out the spec, how do I make this turn the communicant into an awakened form?
---#newspell
---#name "Ritual of Ancestral Awakening"
---#descr "Through deep meditation and mystical rites, a Viras Communicant can awaken the dormant memories of their divine heritage. This sacred transformation brings them closer to their ancestral nature, though they remain far from the purity of true Boreadae. The ritual permanently transforms a Viras Communicant into an Awakened Viras Communicant, granting them sacred status and the ability to serve as vessels for divine power."
---#school 4 -- Alteration 3
---#researchlevel 3
---#path 4 -1 -- Astral 1 to cast
---#pathlevel 1 0
---#fatiguecost 300 -- 3 gems
---#effect 10045 -- Transformation
---#spec 545783812 -- I don't know what this means
---#onlyatsite 1451 -- Can only be cast at the Hall of the Boreadae Kings
---#restricted 166 -- National
---#onlymnr "Viras Communicant"
---#end
+#newspell
+#name "Ritual of Ancestral Awakening"
+#descr "Through deep meditation and mystical rites at the Hall of the Boreadae Kings, a Viras Communicant can awaken the dormant memories of their divine heritage. This sacred transformation brings them closer to their ancestral nature. The ritual permanently awakens them, granting sacred status and the ability to serve as vessels for Progenitors."
+#details "Turns Viras Communicant awakened: +1 S, +1 H, sacred and mindvessel. No longer a communion slave. Can only be cast at the Hall of the Boreadae Kings."
+#school 1 --alt
+#researchlevel 4
+#path 0 4 -- Astral 1 to cast
+#pathlevel 1 0
+#fatiguecost 300 -- 3 gems
+#nreff 1
+#restricted 166 -- National
+#onlyatsite 1451 -- Can only be cast at the Hall of the Boreadae Kings
+#onlymnr "Viras Communicant"
+#spec 545783812 -- Random restrictions from original spell, probably not relevant
+#effect 10130
+#damage 5501 -- Awakened Viras Communicant
+#end
