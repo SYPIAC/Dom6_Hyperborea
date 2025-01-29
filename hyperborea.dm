@@ -82,9 +82,46 @@ Priests: Moderate"
 
 -- All north gods
 #homerealm 1
-
+-- Add pretender choices
+#addgod 3894 -- Serpent of the Heavenly Fires
 #end
 
+
+		------------------------------------
+		----------                ----------
+		--------->      SITES     <---------
+		----------                ----------
+		------------------------------------
+#newsite 1450
+#name "Temple of the Midnight Sun"
+#path 2
+#level 0
+#rarity 5
+#gems 2 2 -- 2 Air gems
+#gems 3 2 -- 2 Water gems
+-- #homecom 7888 -- Will need to define this commander later
+#look -1
+#end
+
+#newsite 1451
+#name "Hall of the Boreadae Kings"
+#path 4
+#level 0
+#rarity 5
+#gems 4 1 -- 1 Astral gem
+#homemon "Child of the Midnight Sun"
+#end
+
+		------------------------------------
+		----------                ----------
+		--------->   WEAPONS    <---------
+		----------                ----------
+		------------------------------------
+#newweapon 1450 -- Crystalline Spear
+#copyweapon 643 -- Bronze Spear
+#name "Crystalline Spear"
+#iceweapon
+#end
 
 		------------------------------------
 		----------                ----------
@@ -101,7 +138,7 @@ Priests: Moderate"
 #descr "The Children of the Midnight Sun are sacred warriors of pure Boreadae blood who have achieved perfect harmony with their divine nature. Like the eternal sun that never sets in their homeland, they possess supernatural endurance that allows them to fight tirelessly. These warriors represent the closest connection to the Boreadae's extraplanar origins, their bodies radiating a subtle glow that marks their divine heritage. Though fewer in number with each passing generation, they remain the most feared of Hyperborea's warriors, combining the natural might of the Boreadae with perfect martial discipline."
 #hp 25
 #size 5
-#prot 10
+#prot 6
 #mor 14
 #mr 15
 #str 18
@@ -114,7 +151,8 @@ Priests: Moderate"
 #holy
 #darkvision
 #snow
-#coldres 10
+#coldres 15
+#icenatprot 2
 #weapon 17 -- Axe
 #armor 14 -- Plate Hauberk
 #armor 118 -- Half Helmet
@@ -130,7 +168,6 @@ Priests: Moderate"
 #spr2 "./hyperborea/snow_ape_attack.png"
 #descr "Snow-Apes are primitive beasts native to the frozen wastes of Elysium, captured and enslaved by the Boreadae to serve as expendable troops. Though physically strong and naturally adapted to the cold, they are considered little more than useful animals by their Boreadae masters. The Snow-Apes are driven into battle by cruel taskmasters, their primitive fury made useful through strict discipline and the threat of punishment. Their thick fur and natural resistance to cold makes them well-suited for warfare in the eternal winter of Hyperborea."
 #coldres 5
-#icenatprot 1
 #hp 9
 #size 3
 #prot 2
@@ -160,6 +197,7 @@ Priests: Moderate"
 #spr1 "./hyperborea/snow_ape_archer_idle.png"
 #spr2 "./hyperborea/snow_ape_archer_attack.png"
 #descr "Snow-Apes are primitive beasts native to the frozen wastes of Elysium, captured and enslaved by the Boreadae. While most serve as expendable melee troops, some show an aptitude for ranged combat and are trained with simple bows. Though their accuracy is poor compared to trained archers, their strength allows them to draw heavier bows than most humans. Like all Snow-Apes, they are naturally adapted to the cold and are driven into battle by cruel taskmasters."
+#coldres 5
 #hp 10
 #size 3
 #prot 1
@@ -186,8 +224,9 @@ Priests: Moderate"
 #name "Viras Kern"
 #spr1 "./hyperborea/viras_kern_idle.png"
 #spr2 "./hyperborea/viras_kern_attack.png"
-#descr "The Viras Kern are lesser descendants of the Boreadae, trained to fight with discipline and skill. Their natural cold resistance and martial prowess make them reliable soldiers in the Boreadae's armies."
+#descr "The Viras Kern are lesser descendants of the Boreadae, trained to fight with discipline and skill. Their natural cold resistance makes them reliable soldiers in the Boreadae's armies. Their weapons, grown from ice crystals, resemble spears, enhancing their combat effectiveness in the frigid environment."
 #hp 12
+#icenatprot 1
 #size 3
 #prot 0
 #mor 10
@@ -201,7 +240,8 @@ Priests: Moderate"
 #mapmove 14
 #maxage 50
 #coldres 10
-#weapon 645 -- Bronze Sword
+#snow
+#weapon 1450 -- Crystalline Spear
 #armor 15 -- Full Leather Armor
 #armor 2 -- Shield
 #armor 135 -- Bronze Cap
@@ -267,7 +307,7 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #taskmaster 2
 #beastmaster 1
 #makemonsters1 "Snow-Ape Slave" | 6
-#makemonsters2 "Snow-Ape Archer" | 3
+#makemonsters2 "Snow-Ape Archer" | 4
 #weapon 40 -- Whip
 #weapon 595 -- Hypnotic Gaze
 #armor 13 -- Chain Mail
@@ -309,30 +349,6 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #snow
 #end
 
-		------------------------------------
-		----------                ----------
-		--------->      SITES     <---------
-		----------                ----------
-		------------------------------------
-#newsite 1450
-#name "Temple of the Midnight Sun"
-#path 2
-#level 0
-#rarity 5
-#gems 2 2 -- 2 Air gems
-#gems 3 2 -- 2 Water gems
--- #homecom 7888 -- Will need to define this commander later
-#look -1
-#end
-
-#newsite 1451
-#name "Hall of the Boreadae Kings"
-#path 4
-#level 0
-#rarity 5
-#gems 4 1 -- 1 Astral gem
-#homemon "Child of the Midnight Sun"
-#end
 
 		------------------------------------
 		----------                ----------
