@@ -53,7 +53,7 @@ The Boreadae quickly established dominion over the native Snow-Apes, seeing the 
 Now the pure-blooded Boreadae grow ever fewer, as more of their kind succumb to the material realm's corrupting influence. Their prophets speak of achieving the Pantokrator's throne before their divine essence is fully lost, yet many fear they have already strayed too far from their celestial origin. In their desperation to preserve what remains of their otherworldly nature, the Boreadae elders have grown fanatical in their pursuit of blood purity and ancient rites of power."
 #summary "Race: Extraplanar Boreadae manifested as half-giants, degenerated Viras, and enslaved Snow-Apes
 Preferences: Cold scale +3
-Military: Divine warriors, frost priests, and enslaved beast-men troop
+Military: Divine warriors, humanlike Viras, and cheap enslaved beast-men
 Magic: Strong Water, Glamour. Some Astral, Blood, and Fire.
 Scales & Blesses: Cold limit +1
 Buildings: Start with an ice castle, rest are regular
@@ -112,6 +112,8 @@ Priests: Moderate"
 #homemon "Child of the Midnight Sun"
 #end
 
+
+
 		------------------------------------
 		----------                ----------
 		--------->   WEAPONS    <---------
@@ -128,8 +130,6 @@ Priests: Moderate"
 		--------->      UNITS     <---------
 		----------                ----------
 		------------------------------------
-
-
 -- Sacred
 #newmonster
 #name "Child of the Midnight Sun"
@@ -247,6 +247,7 @@ Priests: Moderate"
 #armor 135 -- Bronze Cap
 #end
 
+
 		------------------------------------
 		----------                ----------
 		--------->   COMMANDERS   <---------
@@ -282,13 +283,15 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #snow
 #end 
 
--- Slave Taskmaster
+
+-- Slave/animal leader
 #newmonster
 #name "Boreadae Taskmaster"
 #spr1 "./hyperborea/boreadae_taskmaster_idle.png"
 #spr2 "./hyperborea/boreadae_taskmaster_attack.png"
-#descr "The Boreadae Taskmasters are imposing half-giants who enforce discipline over Snow-Ape slaves and sometimes serve as individual fighters. With deep blue eyes that inspire awe, they ensure the Snow-Apes remain obedient and ready to follow orders. Lacking the mystical powers of their scholarly kin, they are nonetheless respected for their vital role in maintaining Hyperborea's slave armies and can swiftly gather more beasts from the frozen wastes."
-
+#descr "Some Boreadae are gifted with deep blue eyes, much like the void their forebears came from. They exude an aura of peace that inspires even beasts to take their natural place in the Hyperborean battle lines.
+Usually, they are employed to ensure the Snow-Apes remain obedient, or inspire and lead other undisciplined subjects. Others scour the frozen wastes for Snow-Apes to recruit, and can train up to 10 per month.
+In combat, their gaze is turned to a weapon, stunning whoever they lock eyes with."
 #hp 33
 #size 5
 #prot 18
@@ -306,6 +309,7 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #undisleader 1
 #taskmaster 2
 #beastmaster 1
+#inspirational 1
 #makemonsters1 "Snow-Ape Slave" | 6
 #makemonsters2 "Snow-Ape Archer" | 4
 #weapon 40 -- Whip
@@ -317,6 +321,7 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #coldres 10
 #ressize 2
 #end
+
 
 -- Abaris the Healer
 #newmonster
@@ -348,7 +353,6 @@ Those Communicants who prove especially devoted may undergo sacred rituals that 
 #coldres 10
 #snow
 #end
-
 
 		------------------------------------
 		----------                ----------
