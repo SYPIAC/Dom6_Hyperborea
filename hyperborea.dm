@@ -56,7 +56,7 @@ Preferences: Cold scale +3
 Military: Divine warriors, humanlike Viras, and cheap enslaved beast-men
 Magic: Strong Water, Glamour. Some Astral, Blood, and Fire.
 Scales & Blesses: Cold limit +1
-Buildings: Start with an ice castle, rest are regular
+Buildings: Start with an ice castle, rest are regular. Forts protect population from deaths from cold.
 Priests: Moderate"
 
 #flag "./hyperborea_flag.tga"
@@ -66,9 +66,10 @@ Priests: Moderate"
 #secondarycolor 0.2 0.3 0.4
 
 -- Nation specific preferences
-#idealcold 2
+#idealcold 3
 #moreheat -1
 #moremagic 1
+#fortcoldscaleres 2
 #forestsurvival
 #mountainsurvival
 
@@ -99,8 +100,7 @@ Priests: Moderate"
 #rarity 5
 #gems 2 2 -- 2 Air gems
 #gems 3 2 -- 2 Water gems
--- #homecom 7888 -- Will need to define this commander later
-#look -1
+#look 8
 #end
 
 #newsite 1451
@@ -110,6 +110,7 @@ Priests: Moderate"
 #rarity 5
 #gems 4 1 -- 1 Astral gem
 #homemon "Child of the Midnight Sun"
+#look 5
 #end
 
 
@@ -259,7 +260,7 @@ Priests: Moderate"
 		----------                ----------
 		------------------------------------
 -- Communion slave
-#newmonster
+#newmonster 5500
 #name "Viras Communicant"
 #spr1 "./hyperborea/viras_communicant_idle.png"
 #spr2 "./hyperborea/viras_communicant_attack.png"
@@ -403,7 +404,7 @@ Abaris is a powerful mage, healer, and diviner, known for his ability to prevent
 #rpcost 10002
 #end
 
--- Awakened Communicant
+-- Awakened Communicant - just for upkeep, can't be recruited
 #selectmonster "Awakened Viras Communicant"
 #gcost 10000
 #rcost 1
@@ -455,14 +456,14 @@ Abaris is a powerful mage, healer, and diviner, known for his ability to prevent
 #descr "Through deep meditation and mystical rites at the Hall of the Boreadae Kings, a Viras Communicant can awaken the dormant memories of their divine heritage. This sacred transformation brings them closer to their ancestral nature. The ritual permanently awakens them, granting sacred status and the ability to serve as vessels for Progenitors."
 #details "Turns Viras Communicant awakened: +1 S, +1 H, sacred and mindvessel. No longer a communion slave. Can only be cast at the Hall of the Boreadae Kings."
 #school 1 --alt
-#researchlevel 4
+#researchlevel 0
 #path 0 4 -- Astral 1 to cast
-#pathlevel 1 0
+#pathlevel 0 1
 #fatiguecost 300 -- 3 gems
 #nreff 1
 #restricted 166 -- National
+#onlymnr 5500
 #onlyatsite 1451 -- Can only be cast at the Hall of the Boreadae Kings
-#onlymnr "Viras Communicant"
 #spec 545783812 -- Random restrictions from original spell, probably not relevant
 #effect 10130
 #damage 5501 -- Awakened Viras Communicant
