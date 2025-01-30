@@ -83,7 +83,7 @@ Priests: Moderate"
 -- All north gods
 #homerealm 1
 -- Add pretender choices
-#addgod 3894 -- Serpent of the Heavenly Fires
+#addgod 3894 -- Serpent of the Heavenly Fires comes from the void
 #end
 
 
@@ -307,6 +307,10 @@ Those who have undergone a sacred ritual that awakened their blood memory of the
 #coldres 10
 #magicskill 4 1 -- Astral 2
 #mindvessel 1
+#airattuned 100
+#waterattuned 50
+#fireattuned 100
+#earthattuned 100
 #armor 230 -- Magic Robes
 #weapon 1451 -- Crystalline Staff
 #end
